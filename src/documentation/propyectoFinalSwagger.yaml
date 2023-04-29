@@ -1,0 +1,374 @@
+openapi: 3.0.0
+info:
+  title: BackEnd-ProyectoFinal
+  description: >-
+    Coleccion creada para corroborar el correcto funcionamiendo del e-commerce
+    creado como proyecto final del curso Programación Backend de Coder House.
+
+
+    Haz [click aquí](https://github.com/johamad5/BackEnd-ProyectoFinal) para
+    acceder al repositorio en GitHub.
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+tags:
+  - name: Login
+  - name: Signup
+  - name: Home
+  - name: Products
+  - name: Users
+  - name: Cart
+paths:
+  /loginError:
+    get:
+      tags:
+        - Login
+      summary: loginError
+      description: >-
+        Muesta mensaje de error que se presenta cuando un usuario se intenta
+        loguear con una combiunación de credenciales incorrectas.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /login:
+    post:
+      tags:
+        - Login
+      summary: postLogin
+      description: >-
+        Permite iniciar sesión con las credenciales correspondientes a un
+        usuario previamentre registrado.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: algo@algo.com
+                password: Prueba.1234
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /logout:
+    get:
+      tags:
+        - Login
+      summary: logout
+      description: |-
+        Elimina la sesion activa.
+
+        EndFragment
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /signupError:
+    get:
+      tags:
+        - Signup
+      summary: signupError
+      description: >-
+        StartFragment
+
+
+        Muesta mensaje de error que se presenta cuando no se puede registrar un
+        usuario en la base de datos.
+
+
+        EndFragment
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /signup:
+    post:
+      tags:
+        - Signup
+      summary: postSignup(Admin)
+      description: |-
+        StartFragment
+
+        Permite registrar un usuario administrador en el sistema.
+
+        EndFragment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Usuario Admin
+                email: soyadmin@algo.com
+                password: Prueba.1234
+                address: Mi casita 334
+                age: '27'
+                phone: '099129533'
+                code: TatoEl1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /:
+    get:
+      tags:
+        - Home
+      summary: getHome
+      description: Renderiza la vista de home creada con el motor de plantillas ejs.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /prods/:
+    get:
+      tags:
+        - Products
+      summary: getAll
+      description: Devuelve todos los productos que se encuentran en la base de datos.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Products
+      summary: addNew
+      description: |-
+        Permite agregar un nuevo producto a la base de datos.
+
+        El ID del mismo se genera de forma automática.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                title: Test Product
+                category: productCategory
+                price: 999
+                stock: 3
+                thumbnail: protuctPhoto.png
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Products
+      summary: deleteAll
+      description: Elimina todos los productos de la base de datos.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /prods/{id}:
+    get:
+      tags:
+        - Products
+      summary: getById
+      description: >-
+        Devuelve el producto que se encuentra en la base de datos según el ID
+        especificado.
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    patch:
+      tags:
+        - Products
+      summary: updateProd
+      description: >-
+        Permite editar los atributos de un producto que se encuentre en la base
+        de datos dependiendo de su ID.
+
+
+        Se modifican unicamente los atributos que aparecen en el cuerpo del JSON
+        y poseen valores diferentes a los que se encuentran ya definidos.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                title: Test Product
+                category: productCategoryEdited
+                price: 123
+                stock: 7
+                thumbnail: protuctPhotoEdited.png
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Products
+      summary: deleteById
+      description: Elimina un producto de la base de datos según el ID especificado.
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /users/all:
+    get:
+      tags:
+        - Users
+      summary: getAllUsers
+      description: >-
+        Devuelve todos los usuarios registrados en el sistema. La información a
+        mostrar depende del DTO definido.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /users/{id}:
+    get:
+      tags:
+        - Users
+      summary: getUsersById
+      description: >-
+        StartFragment
+
+
+        Devuelve el usuarios registrados en el sistema segú el ID especificado.
+        La información a mostrar depende del DTO definido.
+
+
+        EndFragment
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /carts/:
+    get:
+      tags:
+        - Cart
+      summary: getAll
+      description: >-
+        Muestra todos los carritos de compras que se encuentan en la base de
+        datos.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /carts/myCart:
+    get:
+      tags:
+        - Cart
+      summary: getMySessionCart
+      description: Muestra el carrito de compras perteneciente a la sesión activa.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /carts/checkout:
+    get:
+      tags:
+        - Cart
+      summary: checkout
+      description: >-
+        Permite confirmar la compra de los productos que se encuentran en el
+        carrito de la sesión activa.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /carts/deleteCart:
+    delete:
+      tags:
+        - Cart
+      summary: deleteSessionCart
+      description: >-
+        Elimina todos los productos que se encuenten dentro del carrito que
+        posee la sesión activa.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /carts/{productId}:
+    delete:
+      tags:
+        - Cart
+      summary: deleteProdToCart
+      description: >-
+        Elimina todos los productos que se encuenten dentro del carrito que
+        posee la sesión activa.
+      parameters:
+        - name: productId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /carts/{productId}/{units}:
+    patch:
+      tags:
+        - Cart
+      summary: addProdToCart
+      description: >-
+        Añade el producto que se corresponde al ID de producto especificado con
+        las unidades especificadas al carrito perteneciente a la sesión activa.
+      requestBody:
+        content: {}
+      parameters:
+        - name: productId
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: units
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

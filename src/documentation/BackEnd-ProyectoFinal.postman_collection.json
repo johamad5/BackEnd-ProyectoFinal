@@ -1,0 +1,561 @@
+{
+	"info": {
+		"_postman_id": "f0eb12bf-1b5b-4d45-bdc1-8023cbcddaec",
+		"name": "BackEnd-ProyectoFinal",
+		"description": "Coleccion creada para corroborar el correcto funcionamiendo del e-commerce creado como proyecto final del curso Programación Backend de Coder House.\n\nHaz [click aquí](https://github.com/johamad5/BackEnd-ProyectoFinal) para acceder al repositorio en GitHub.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22570481"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "loginError",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/loginError",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"loginError"
+							]
+						},
+						"description": "Muesta mensaje de error que se presenta cuando un usuario se intenta loguear con una combiunación de credenciales incorrectas."
+					},
+					"response": []
+				},
+				{
+					"name": "postLogin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\":\"algo@algo.com\",\r\n\"password\":\"Prueba.1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						},
+						"description": "Permite iniciar sesión con las credenciales correspondientes a un usuario previamentre registrado."
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"logout"
+							]
+						},
+						"description": "Elimina la sesion activa.\n\nEndFragment"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Signup",
+			"item": [
+				{
+					"name": "signupError",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/signupError",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"signupError"
+							]
+						},
+						"description": "StartFragment\n\nMuesta mensaje de error que se presenta cuando no se puede registrar un usuario en la base de datos.\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "postSignup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test Dos\",\r\n    \"email\":\"algo2@algo.com\",\r\n    \"password\":\"Prueba.1234\",\r\n    \"address\":\"Mi Apto 105\",\r\n    \"age\":\"24\",\r\n    \"phone\":\"091223344\",\r\n    \"code\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"signup"
+							]
+						},
+						"description": "Permite registrar un usuario en el sistema.\n\nLa clave \"ADMIN\" puede quedar vacía. Si se ingresa como valor \"TatoEl1\" el usuario se registra como administrador."
+					},
+					"response": []
+				},
+				{
+					"name": "postSignup(Admin)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Usuario Admin\",\r\n    \"email\":\"soyadmin@algo.com\",\r\n    \"password\":\"Prueba.1234\",\r\n    \"address\":\"Mi casita 334\",\r\n    \"age\":\"27\",\r\n    \"phone\":\"099129533\",\r\n    \"code\":\"TatoEl1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"signup"
+							]
+						},
+						"description": "StartFragment\n\nPermite registrar un usuario administrador en el sistema.\n\nEndFragment"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Home",
+			"item": [
+				{
+					"name": "getHome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								""
+							]
+						},
+						"description": "Renderiza la vista de home creada con el motor de plantillas ejs."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/prods/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prods",
+								""
+							]
+						},
+						"description": "Devuelve todos los productos que se encuentran en la base de datos."
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/prods/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prods",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						},
+						"description": "Devuelve el producto que se encuentra en la base de datos según el ID especificado."
+					},
+					"response": []
+				},
+				{
+					"name": "addNew",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Test Product\",\r\n    \"category\":\"productCategory\",\r\n    \"price\":999,\r\n    \"stock\":3,\r\n    \"thumbnail\":\"protuctPhoto.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/prods/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prods",
+								""
+							]
+						},
+						"description": "Permite agregar un nuevo producto a la base de datos.\n\nEl ID del mismo se genera de forma automática."
+					},
+					"response": []
+				},
+				{
+					"name": "updateProd",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Test Product\",\r\n    \"category\":\"productCategoryEdited\",\r\n    \"price\":123,\r\n    \"stock\":7,\r\n    \"thumbnail\":\"protuctPhotoEdited.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/prods/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prods",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						},
+						"description": "Permite editar los atributos de un producto que se encuentre en la base de datos dependiendo de su ID.\n\nSe modifican unicamente los atributos que aparecen en el cuerpo del JSON y poseen valores diferentes a los que se encuentran ya definidos."
+					},
+					"response": []
+				},
+				{
+					"name": "deleteById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/prods/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prods",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						},
+						"description": "Elimina un producto de la base de datos según el ID especificado."
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAll",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/prods/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prods",
+								""
+							]
+						},
+						"description": "Elimina todos los productos de la base de datos."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"all"
+							]
+						},
+						"description": "Devuelve todos los usuarios registrados en el sistema. La información a mostrar depende del DTO definido."
+					},
+					"response": []
+				},
+				{
+					"name": "getUsersById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						},
+						"description": "StartFragment\n\nDevuelve el usuarios registrados en el sistema segú el ID especificado. La información a mostrar depende del DTO definido.\n\nEndFragment"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/carts/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carts",
+								""
+							]
+						},
+						"description": "Muestra todos los carritos de compras que se encuentan en la base de datos."
+					},
+					"response": []
+				},
+				{
+					"name": "getMySessionCart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/carts/myCart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carts",
+								"myCart"
+							]
+						},
+						"description": "Muestra el carrito de compras perteneciente a la sesión activa."
+					},
+					"response": []
+				},
+				{
+					"name": "checkout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/carts/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carts",
+								"checkout"
+							]
+						},
+						"description": "Permite confirmar la compra de los productos que se encuentran en el carrito de la sesión activa."
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSessionCart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/carts/deleteCart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carts",
+								"deleteCart"
+							]
+						},
+						"description": "Elimina todos los productos que se encuenten dentro del carrito que posee la sesión activa."
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProdToCart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/carts/:productId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carts",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": null
+								}
+							]
+						},
+						"description": "Elimina todos los productos que se encuenten dentro del carrito que posee la sesión activa."
+					},
+					"response": []
+				},
+				{
+					"name": "addProdToCart",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/carts/:productId/:units",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carts",
+								":productId",
+								":units"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": null
+								},
+								{
+									"key": "units",
+									"value": null
+								}
+							]
+						},
+						"description": "Añade el producto que se corresponde al ID de producto especificado con las unidades especificadas al carrito perteneciente a la sesión activa."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
