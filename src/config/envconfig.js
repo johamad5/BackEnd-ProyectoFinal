@@ -9,6 +9,6 @@ export const NODE_ENV = process.env.NODE_ENV;
 export const PORT = process.env.PORT;
 export const URI_MONGO =
 	'mongodb+srv://jMad:Desafio13@desafio.flqrhzt.mongodb.net/test';
-export const USER = process.env.USER || 'johanamadero3@gmail.com';
-export const PASS = process.env.PASS || 'qdkxjeodhtveeobx';
-export const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'johanamadero3@gmail.com';
+export const USER = 'johanamadero3@gmail.com';
+export const PASS = 'qdkxjeodhtveeobx';
+export const ADMIN_EMAIL = 'johanamadero3@gmail.com';
