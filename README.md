@@ -3,12 +3,39 @@
 ## 👩‍💻 Tutor - [Gonzalo Satina Naggi](https://github.com/GonzaloSatina)
 <br>
 
-### 🔰    En este repositorio encontraran el proyecto final correspondiente al curso de Programación Backend de CoderHouse. El mismo corresponde al desarrollo backend de un pequeño e-commerce.
+🔰    En este repositorio encontraran el proyecto final correspondiente al curso de Programación Backend de CoderHouse. El mismo corresponde al desarrollo backend de un pequeño e-commerce.
 
 <br>
 
 ### 💻 [LINK AL PROYECTO EN RAILWAY](https://backend-proyectofinal-production-896d.up.railway.app/)
 ### 📑 [DOCUMENTACIÓN CON SWAGGER](https://backend-proyectofinal-production-896d.up.railway.app/api/docs/)
+<br>
+
+# Ejecutar el proyecto local
+
+Cloná el repo
+
+```bash
+  git clone https://github.com/johamad5/Backend-ProyectoFinal.git
+```
+
+Ve al directorio del proyecto
+
+```bash
+  cd Backend-ProyectoFinal/
+```
+
+Instala las dependencias necesarias
+
+```bash
+  npm install
+```
+
+Inicia el servidor
+
+```bash
+  npm run start
+```
 <br>
 
 # MÉTODOS
