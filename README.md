@@ -7,8 +7,8 @@
 
 <br>
 
-### 💻 [LINK AL PROYECTO EN RAILWAY](https://link_de_railway/)
-### 📑 [DOCUMENTACIÓN CON SWAGGER](https://link_de_swagger/)
+### 💻 [LINK AL PROYECTO EN RAILWAY](https://backend-proyectofinal-production-896d.up.railway.app/)
+### 📑 [DOCUMENTACIÓN CON SWAGGER](https://backend-proyectofinal-production-896d.up.railway.app/api/docs/)
 <br>
 
 # MÉTODOS

@@ -9,8 +9,9 @@ const options = {
 	definition: {
 		openapi: '3.0.0',
 		info: {
-			title: 'Nuestra API en Express con Swagger',
-			description: 'Un simple CRUD de productos',
+			title: 'PROYECTO FINAL  - Documentación',
+			description:
+				'Se muestran las diferentes rutas existentes para manejar la API creada para el proyecto final de Back End.',
 		},
 	},
 	apis: [`./src/documentation/*.yaml`],
