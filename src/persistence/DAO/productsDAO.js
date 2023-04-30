@@ -48,6 +48,17 @@ export default class ProductsDaoMongo {
 		return await this.model.find({ productId: id });
 	}
 
+	async getDataByPriceFilter(options) {
+		const { maxPrice, minPrice } = options;
+
+		let newProductList = [];
+		newProductList = await this.model.find({
+			$and: [{ price: { $gte: minPrice } }, { price: { $lte: maxPrice } }],
+		});
+
+		return newProductList;
+	}
+
 	async newProd() {
 		return new this.model();
 	}

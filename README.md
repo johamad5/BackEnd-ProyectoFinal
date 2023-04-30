@@ -3,7 +3,7 @@
 ## 👩‍💻 Tutor - [Gonzalo Satina Naggi](https://github.com/GonzaloSatina)
 <br>
 
-🔰    En este repositorio encontraran el proyecto final correspondiente al curso de Programación Backend de CoderHouse. El mismo corresponde al desarrollo backend de un pequeño e-commerce.
+🔰    En este repositorio encontrarán el proyecto final correspondiente al curso de Programación Backend de CoderHouse. El mismo corresponde al desarrollo backend de un pequeño e-commerce.
 
 <br>
 
@@ -39,25 +39,25 @@ Inicia el servidor
 <br>
 
 # MÉTODOS
-## Login
-| Metodo   | Ruta                       | Descripción                                                    |
+## Login  
+| Metodo   | Ruta                          | Descripción                                                    |
 | :---      |     :---                     | :---                                                         	|
-| POST      | /login                       | Permite iniciar sesión con un usuario previamente registrado.  |
-| GET       | /logout 		               | Devuelve un producto según su id.                              |
+| GET       | /logout 		                 | Cierra la sesión activa.                                       |
 | GET       | /loginError                  | Error que se devuelve al intentar realizar el login con una combinación de credenciales incorrecta.  |
+| POST      | /login                       | Permite iniciar sesión con un usuario previamente registrado.  |
 <br>
 
 ## Signup
-| Metodo   | Ruta                       | Descripción                                                    |
-| :---      |     :---                     | :---                                                         	|
+| Metodo   | Ruta                          | Descripción                                                               |
+| :---      |     :---                     | :---                                                                     	|
+| GET       | /signupError 		             | Error que se devuelve cuando no se puede realizar el registro del usuario en el sistema de forma exitosa.                             |  
 | POST      | /signup                      | Permite registrar un nuevo usuario en el sistema { adminCode: TatoEl1 }.  |
-| GET       | /signupError 		           | Error que se devuelve cuando no se puede realizar el registro del usuario en el sistema de forma exitosa.                             |  
 <br>
 
 ## Home
 | Metodo   | Ruta                       | Descripción                                                    |
 | :---      |     :---                     | :---                                                         	|
-| GET       | /                            | Devuelve la vista principal del sistema renderizada con el motor de plantillas EJS y donde se encuentra el chat con Socket.IO.  |  
+| GET       | /                            | **Auth req.** Devuelve la vista principal del sistema renderizada con el motor de plantillas EJS y donde se encuentra el chat con Socket.IO.  |  
 <br>
 
 ## Users
@@ -65,20 +65,18 @@ Inicia el servidor
 | :---    |     :---                            | :---                                                                		        	|
 | GET     | /users/all                      | **Admin Auth req.** Devuelve todos los usuarios de la base de datos.	|
 | GET     | /users/:id                     | **Admin Auth req.** Devuelve un usuario según el ID especificado.  |
-
 <br>
 
 ## Products
 | Metodo| Ruta    | Descripción             |
 | :---    |     :---                            | :---                                                                		        	|
-| GET     | /prods/                   |**Auth req.** Devuelve todos los productos que se encuentan en la base de datos. 	        	|
-| GET     | /prods/:id  		            | **Admin Auth req.** Devuelve un producto según el ID especificado.|
-| POST    | /prods/                    | **Admin Auth req.** Agrega un nuevo producto.  |
-| PATCH     | /prods/:id                       | **Admin Auth req.** Actualiza un producto según el ID especificado. 	|
-| DELETE     | /prods/:id 		            | **Admin Auth req.** Elimina un producto según el ID especificado. |
-| DELETE    | /prods/                     | **Admin Auth req.** Elimina todos los productos que se encuentan en la base de datos. |
-
-
+| GET     | /prods/                   |**Auth req.** Devuelve todos los productos que se encuentran en la base de datos. 	|
+| GET     | /prods/:id  		          | **Admin Auth req.** Devuelve un producto según el ID especificado.|
+| GET     | /prods/:minPrice/:maxPrice|**Auth req.** Devuelve todos los productos que se encuentran en la base de datos según el filtro de precios especificado. 	|
+| PATCH   | /prods/:id                | **Admin Auth req.** Actualiza un producto según el ID especificado. 	|
+| POST    | /prods/                   | **Admin Auth req.** Agrega un nuevo producto.                         |
+| DELETE  | /prods/:id 		            | **Admin Auth req.** Elimina un producto según el ID especificado.     |
+| DELETE  | /prods/                   | **Admin Auth req.** Elimina todos los productos que se encuentran en la base de datos. |
 <br>
 
 ## Carts
@@ -86,10 +84,10 @@ Inicia el servidor
 | :---    |     :---                            | :---                                                                		        	|
 | GET     | /carts/                        | **Admin Auth req.** Devuelve todos los carritos de la base de datos.		        	|
 | GET     | /carts/myCart            | **Auth req.** Devuelve el detalle del carrito perteneciente la sesión activa.|
+| GET     | /carts/checkout 	            | **Auth req.** Confirma un pedido con todos los productos que contiene el carrito de la sesión activa.       |
+| PATCH     | /carts/:producId/:units        | **Auth req.** Agrega al carrito de la sesión el producto especificado con las unidades especificadas.	|
 | DELETE    | /carts/deleteCart                     | **Auth req.** Vacía el carrito perteneciente la sesión activa. |
 | DELETE    | /carts/:productId                     | **Auth req.** Elimina el producto según el ID especificado del carrito de la sesión activa. |
-| PATCH     | /carts/:producId/:units                      | **Auth req.** Agrega al carrito de la session el producto especificado con las unidades especificadas.	|
-| GET     | /carts/checkout 	            | **Auth req.** Confirma un pedido con todos los productos que contiene el carrito de la sesión activa.       |
 
 
 <br>
@@ -97,7 +95,6 @@ Inicia el servidor
 
 # 🛠 SE UTILIZÓ
 ## 🔰 [express 4.18.2](https://www.npmjs.com/package/express)
-
 ## 🔰 [express-session ^1.17.3](https://www.npmjs.com/package/express-session)
 ## 🔰 [swagger-ui-express 4.6.2](https://www.npmjs.com/package/swagger-ui-express)
 ## 🔰 [swagger-jsdoc 6.2.8](https://www.npmjs.com/package/swagger-jsdoc)
@@ -112,7 +109,6 @@ Inicia el servidor
 ## 🔰 [cors 2.8.5](https://www.npmjs.com/package/cors)
 ## 🔰 [dotenv 16.0.3](https://www.npmjs.com/package/dotenv)
 ## 🔰 [nodemon 2.0.20](https://www.npmjs.com/package/nodemon)
-## 🔰 [winston 3.8.2](https://www.npmjs.com/package/winston)
 ## 🔰 [minimist 1.2.7](https://www.npmjs.com/package/minimist)
 ## 🔰 [twilio 4.10.0](https://www.npmjs.com/package/twilio)
 ## 🔰 [nodemailer 6.9.1](https://www.npmjs.com/package/nodemailer)
@@ -122,9 +118,9 @@ Inicia el servidor
 
 # 💬 Sobre mi 
 
-Luego de 5 años incursionando por en el mundo de la medicina y realizar varios cursos de forma autodidacta relacionados con la informática y las tecnologías, decidí dar el gran salto hacia una de las áreas que más me apasiona y en su momento más miedo me dió, la programación.
+Luego de 5 años incursionando por el mundo de la medicina y realizar varios cursos de forma autodidacta relacionados con la informática y las tecnologías, decidí dar el gran salto hacia una de las áreas que más me apasiona y en su momento más miedo me dio, la programación.
 
-Actualmente me encuentro culminando el módulo de Progranación Backend y me encuentro trabajando en una empresa asociada a las tecnologías, muy feliz de mi elección. 
+Actualmente, me encuentro culminando el módulo de Programación Backend y trabajando en una empresa asociada a la venta de Certificados Digitales, muy feliz de mi elección. 
 
 
 Si quieres conocer más de mí en el ámbito profesional me puedes encontrar en:

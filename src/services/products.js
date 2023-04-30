@@ -14,6 +14,10 @@ export async function getCompleteDataById(id) {
 	return await prodsDAO.findCompleteProdById(id);
 }
 
+export async function getDataByPriceFilter(options) {
+	return await prodsDAO.getDataByPriceFilter(options);
+}
+
 export async function createProduct() {
 	return prodsDAO.newProd();
 }

@@ -2,6 +2,7 @@ import {
 	getData,
 	getDataById,
 	getCompleteDataById,
+	getDataByPriceFilter,
 	createProduct,
 	saveData,
 	updateProdById,
@@ -18,6 +19,22 @@ export const getAll = async (req, res) => {
 	res
 		.status(200)
 		.json({ Action: 'Get all products from the database', Data: data });
+};
+
+export const getByFilter = async (req, res) => {
+	const { url, method } = req;
+	logger.info(`Request received by the server. Route ${method} - /prods${url}`);
+
+	const options = {
+		minPrice: req.params.minPrice || 0,
+		maxPrice: req.params.maxPrice || 9999,
+	};
+	const data = await getDataByPriceFilter(options);
+
+	res.status(200).json({
+		Action: 'Get products from the database with price filters.',
+		Data: data,
+	});
 };
 
 export const getOneById = async (req, res) => {

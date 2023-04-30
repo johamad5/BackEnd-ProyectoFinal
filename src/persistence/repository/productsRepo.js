@@ -26,6 +26,10 @@ export default class ProductsRepo {
 		return await this.dao.findCompleteProdById(id);
 	}
 
+	async getDataByPriceFilter(options) {
+		return await this.dao.getDataByPriceFilter(options);
+	}
+
 	async newProd() {
 		return await this.dao.newProd();
 	}
