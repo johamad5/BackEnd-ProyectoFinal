@@ -16,12 +16,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/loginError",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/loginError",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"loginError"
 							]
@@ -45,12 +43,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/login",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/login",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"login"
 							]
@@ -65,12 +61,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/logout",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/logout",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"logout"
 							]
@@ -90,12 +84,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/signupError",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/signupError",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"signupError"
 							]
@@ -119,12 +111,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/signup",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/signup",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"signup"
 							]
@@ -148,12 +138,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/signup",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/signup",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"signup"
 							]
@@ -173,12 +161,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								""
 							]
@@ -198,12 +184,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/prods/",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/prods/",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"prods",
 								""
@@ -219,12 +203,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/prods/:id",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/prods/:id",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"prods",
 								":id"
@@ -232,6 +214,36 @@
 							"variable": [
 								{
 									"key": "id",
+									"value": null
+								}
+							]
+						},
+						"description": "Devuelve el producto que se encuentra en la base de datos según el ID especificado."
+					},
+					"response": []
+				},
+				{
+					"name": "getByPriceFilter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_LOCAL}}/prods/:minPrice/:maxPrice",
+							"host": [
+								"{{URL_LOCAL}}"
+							],
+							"path": [
+								"prods",
+								":minPrice",
+								":maxPrice"
+							],
+							"variable": [
+								{
+									"key": "minPrice",
+									"value": null
+								},
+								{
+									"key": "maxPrice",
 									"value": null
 								}
 							]
@@ -255,12 +267,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/prods/",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/prods/",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"prods",
 								""
@@ -285,12 +295,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/prods/:id",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/prods/:id",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"prods",
 								":id"
@@ -312,12 +320,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/prods/:id",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/prods/:id",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"prods",
 								":id"
@@ -339,12 +345,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/prods/",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/prods/",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"prods",
 								""
@@ -365,12 +369,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/users/all",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/users/all",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"users",
 								"all"
@@ -386,12 +388,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/users/:id",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/users/:id",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"users",
 								":id"
@@ -418,12 +418,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/carts/",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/carts/",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"carts",
 								""
@@ -439,12 +437,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/carts/myCart",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/carts/myCart",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"carts",
 								"myCart"
@@ -460,12 +456,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/carts/checkout",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/carts/checkout",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"carts",
 								"checkout"
@@ -481,12 +475,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/carts/deleteCart",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/carts/deleteCart",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"carts",
 								"deleteCart"
@@ -502,12 +494,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/carts/:productId",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/carts/:productId",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"carts",
 								":productId"
@@ -529,12 +519,10 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/carts/:productId/:units",
-							"protocol": "http",
+							"raw": "{{URL_LOCAL}}/carts/:productId/:units",
 							"host": [
-								"localhost"
+								"{{URL_LOCAL}}"
 							],
-							"port": "8080",
 							"path": [
 								"carts",
 								":productId",
@@ -556,6 +544,37 @@
 					"response": []
 				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL_RAILWAY",
+			"value": "https://backend-proyectofinal-production-83e5.up.railway.app"
+		},
+		{
+			"key": "URL_LOCAL",
+			"value": "http://localhost:8080",
+			"type": "string"
 		}
 	]
 }

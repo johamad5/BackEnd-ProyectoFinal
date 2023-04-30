@@ -10,7 +10,7 @@ info:
     acceder al repositorio en GitHub.
   version: 1.0.0
 servers:
-  - url: http://localhost:8080
+  - url: http://{{url_local}}
 tags:
   - name: Login
   - name: Signup
@@ -230,6 +230,30 @@ paths:
       description: Elimina un producto de la base de datos según el ID especificado.
       parameters:
         - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /prods/{minPrice}/{maxPrice}:
+    get:
+      tags:
+        - Products
+      summary: getByPriceFilter
+      description: >-
+        Devuelve el producto que se encuentra en la base de datos según el ID
+        especificado.
+      parameters:
+        - name: minPrice
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: maxPrice
           in: path
           schema:
             type: string
