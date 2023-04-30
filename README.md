@@ -83,9 +83,15 @@ Inicia el servidor
 | Metodo | Ruta    | Descripción     |
 | :---    |     :---                 | :---                                                                		        	|
 | GET     | /carts/                  | **Admin Auth req.** Devuelve todos los carritos de la base de datos.		        	|
+<<<<<<< HEAD
 | GET     | /carts/myCart            | **Auth req.** Devuelve el detalle del carrito perteneciente la sesión activa.    |
 | GET     | /carts/checkout 	       | **Auth req.** Confirma un pedido con todos los productos que contiene el carrito de la sesión activa.       |
 | PATCH   | /carts/:productId/:units | **Auth req.** Agrega al carrito de la sesión el producto especificado con las unidades especificadas.	|
+=======
+| GET     | /carts/myCart            | **Auth req.** Devuelve el detalle del carrito perteneciente la sesión activa.|
+| GET     | /carts/checkout 	       | **Auth req.** Confirma un pedido con todos los productos que contiene el carrito de la sesión activa.       |
+| PATCH   | /carts/:productId/:units  | **Auth req.** Agrega al carrito de la sesión el producto especificado con las unidades especificadas.	|
+>>>>>>> c515aeb157750570418c2d4d46562ab00e6c9d9b
 | DELETE  | /carts/deleteCart        | **Auth req.** Vacía el carrito perteneciente la sesión activa. |
 | DELETE  | /carts/:productId        | **Auth req.** Elimina el producto según el ID especificado del carrito de la sesión activa. |
 
