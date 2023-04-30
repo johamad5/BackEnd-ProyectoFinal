@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: BackEnd-ProyectoFinal
   description: >-
-    Coleccion creada para corroborar el correcto funcionamiendo del e-commerce
+    Colección creada para corroborar el correcto funcionamiento del e-commerce
     creado como proyecto final del curso Programación Backend de Coder House.
 
 
@@ -25,8 +25,8 @@ paths:
         - Login
       summary: loginError
       description: >-
-        Muesta mensaje de error que se presenta cuando un usuario se intenta
-        loguear con una combiunación de credenciales incorrectas.
+        Muestra mensaje de error que se presenta cuando un usuario se intenta
+        loguear con una combinación de credenciales incorrectas.
       responses:
         '200':
           description: Successful response
@@ -39,7 +39,7 @@ paths:
       summary: postLogin
       description: >-
         Permite iniciar sesión con las credenciales correspondientes a un
-        usuario previamentre registrado.
+        usuario previamente registrado.
       requestBody:
         content:
           application/json:
@@ -58,10 +58,7 @@ paths:
       tags:
         - Login
       summary: logout
-      description: |-
-        Elimina la sesion activa.
-
-        EndFragment
+      description: Elimina la sesión activa.
       responses:
         '200':
           description: Successful response
@@ -73,14 +70,8 @@ paths:
         - Signup
       summary: signupError
       description: >-
-        StartFragment
-
-
-        Muesta mensaje de error que se presenta cuando no se puede registrar un
+        Muestra mensaje de error que se presenta cuando no se puede registrar un
         usuario en la base de datos.
-
-
-        EndFragment
       responses:
         '200':
           description: Successful response
@@ -91,12 +82,7 @@ paths:
       tags:
         - Signup
       summary: postSignup(Admin)
-      description: |-
-        StartFragment
-
-        Permite registrar un usuario administrador en el sistema.
-
-        EndFragment
+      description: Permite registrar un usuario administrador en el sistema.
       requestBody:
         content:
           application/json:
@@ -199,7 +185,7 @@ paths:
         de datos dependiendo de su ID.
 
 
-        Se modifican unicamente los atributos que aparecen en el cuerpo del JSON
+        Se modifican únicamente los atributos que aparecen en el cuerpo del JSON
         y poseen valores diferentes a los que se encuentran ya definidos.
       requestBody:
         content:
@@ -245,8 +231,8 @@ paths:
         - Products
       summary: getByPriceFilter
       description: >-
-        Devuelve el producto que se encuentra en la base de datos según el ID
-        especificado.
+        Devuelve todos los productos que se encuentran en la base de datos según
+        el filtro de precio especificado.
       parameters:
         - name: minPrice
           in: path
@@ -268,9 +254,7 @@ paths:
       tags:
         - Users
       summary: getAllUsers
-      description: >-
-        Devuelve todos los usuarios registrados en el sistema. La información a
-        mostrar depende del DTO definido.
+      description: Devuelve todos los usuarios registrados en el sistema.
       responses:
         '200':
           description: Successful response
@@ -281,15 +265,7 @@ paths:
       tags:
         - Users
       summary: getUsersById
-      description: >-
-        StartFragment
-
-
-        Devuelve el usuarios registrados en el sistema segú el ID especificado.
-        La información a mostrar depende del DTO definido.
-
-
-        EndFragment
+      description: Devuelve el usuario registrado en el sistema, según el ID especificado.
       parameters:
         - name: id
           in: path
@@ -307,7 +283,7 @@ paths:
         - Cart
       summary: getAll
       description: >-
-        Muestra todos los carritos de compras que se encuentan en la base de
+        Muestra todos los carritos de compras que se encuentran en la base de
         datos.
       responses:
         '200':
@@ -344,7 +320,7 @@ paths:
         - Cart
       summary: deleteSessionCart
       description: >-
-        Elimina todos los productos que se encuenten dentro del carrito que
+        Elimina todos los productos que se encuentren dentro del carrito que
         posee la sesión activa.
       responses:
         '200':
@@ -357,8 +333,8 @@ paths:
         - Cart
       summary: deleteProdToCart
       description: >-
-        Elimina todos los productos que se encuenten dentro del carrito que
-        posee la sesión activa.
+        Elimina el producto con el ID especificado del carrito correspondiente a
+        la sesión activa.
       parameters:
         - name: productId
           in: path
@@ -370,7 +346,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /carts/{productId}/{units}:
+  /carts/3/4:
     patch:
       tags:
         - Cart
@@ -380,17 +356,6 @@ paths:
         las unidades especificadas al carrito perteneciente a la sesión activa.
       requestBody:
         content: {}
-      parameters:
-        - name: productId
-          in: path
-          schema:
-            type: string
-          required: true
-        - name: units
-          in: path
-          schema:
-            type: string
-          required: true
       responses:
         '200':
           description: Successful response

@@ -82,10 +82,6 @@ export async function confirmOrderById(userId) {
 	const myCart = await cartsDAO.findCompleteCartById(userId);
 	const myProds = myCart[0].products;
 
-	console.log(user);
-	console.log(myCart);
-	console.log(myProds);
-
 	const value = typeof myProds[0]?.price;
 	if (value == 'undefined') {
 		return 'no products';
@@ -118,7 +114,22 @@ export async function confirmOrderById(userId) {
 		</tr>
 			${productList}
 		</table>
-		<p>TOTAL = $ ${amount}.`,
+		<p>TOTAL = $ ${amount}.
+		
+		<table>
+		<tr>
+			<th>Detalle del comprador</th>
+		</tr>
+		<tr>
+			<td>Nombre  -  ${user.name}</td>
+		</tr> 		
+		<tr>
+			<td>Correo  -  ${user.email}</td>
+		</tr> 		
+		<tr>
+			<td>Dirección  -  ${user.address}</td>
+		</tr> 		
+		</table>`,
 	};
 
 	const mailClientOptions = {

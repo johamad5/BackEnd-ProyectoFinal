@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "f0eb12bf-1b5b-4d45-bdc1-8023cbcddaec",
 		"name": "BackEnd-ProyectoFinal",
-		"description": "Coleccion creada para corroborar el correcto funcionamiendo del e-commerce creado como proyecto final del curso Programación Backend de Coder House.\n\nHaz [click aquí](https://github.com/johamad5/BackEnd-ProyectoFinal) para acceder al repositorio en GitHub.",
+		"description": "Colección creada para corroborar el correcto funcionamiento del e-commerce creado como proyecto final del curso Programación Backend de Coder House.\n\nHaz [click aquí](https://github.com/johamad5/BackEnd-ProyectoFinal) para acceder al repositorio en GitHub.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "22570481"
 	},
@@ -24,7 +24,7 @@
 								"loginError"
 							]
 						},
-						"description": "Muesta mensaje de error que se presenta cuando un usuario se intenta loguear con una combiunación de credenciales incorrectas."
+						"description": "Muestra mensaje de error que se presenta cuando un usuario se intenta loguear con una combinación de credenciales incorrectas."
 					},
 					"response": []
 				},
@@ -51,7 +51,7 @@
 								"login"
 							]
 						},
-						"description": "Permite iniciar sesión con las credenciales correspondientes a un usuario previamentre registrado."
+						"description": "Permite iniciar sesión con las credenciales correspondientes a un usuario previamente registrado."
 					},
 					"response": []
 				},
@@ -69,7 +69,7 @@
 								"logout"
 							]
 						},
-						"description": "Elimina la sesion activa.\n\nEndFragment"
+						"description": "Elimina la sesión activa."
 					},
 					"response": []
 				}
@@ -92,7 +92,7 @@
 								"signupError"
 							]
 						},
-						"description": "StartFragment\n\nMuesta mensaje de error que se presenta cuando no se puede registrar un usuario en la base de datos.\n\nEndFragment"
+						"description": "Muestra mensaje de error que se presenta cuando no se puede registrar un usuario en la base de datos."
 					},
 					"response": []
 				},
@@ -146,7 +146,7 @@
 								"signup"
 							]
 						},
-						"description": "StartFragment\n\nPermite registrar un usuario administrador en el sistema.\n\nEndFragment"
+						"description": "Permite registrar un usuario administrador en el sistema."
 					},
 					"response": []
 				}
@@ -248,7 +248,7 @@
 								}
 							]
 						},
-						"description": "Devuelve el producto que se encuentra en la base de datos según el ID especificado."
+						"description": "Devuelve todos los productos que se encuentran en la base de datos según el filtro de precio especificado."
 					},
 					"response": []
 				},
@@ -310,7 +310,7 @@
 								}
 							]
 						},
-						"description": "Permite editar los atributos de un producto que se encuentre en la base de datos dependiendo de su ID.\n\nSe modifican unicamente los atributos que aparecen en el cuerpo del JSON y poseen valores diferentes a los que se encuentran ya definidos."
+						"description": "Permite editar los atributos de un producto que se encuentre en la base de datos dependiendo de su ID.\n\nSe modifican únicamente los atributos que aparecen en el cuerpo del JSON y poseen valores diferentes a los que se encuentran ya definidos."
 					},
 					"response": []
 				},
@@ -378,7 +378,7 @@
 								"all"
 							]
 						},
-						"description": "Devuelve todos los usuarios registrados en el sistema. La información a mostrar depende del DTO definido."
+						"description": "Devuelve todos los usuarios registrados en el sistema."
 					},
 					"response": []
 				},
@@ -403,7 +403,7 @@
 								}
 							]
 						},
-						"description": "StartFragment\n\nDevuelve el usuarios registrados en el sistema segú el ID especificado. La información a mostrar depende del DTO definido.\n\nEndFragment"
+						"description": "Devuelve el usuario registrado en el sistema, según el ID especificado."
 					},
 					"response": []
 				}
@@ -427,7 +427,7 @@
 								""
 							]
 						},
-						"description": "Muestra todos los carritos de compras que se encuentan en la base de datos."
+						"description": "Muestra todos los carritos de compras que se encuentran en la base de datos."
 					},
 					"response": []
 				},
@@ -484,7 +484,7 @@
 								"deleteCart"
 							]
 						},
-						"description": "Elimina todos los productos que se encuenten dentro del carrito que posee la sesión activa."
+						"description": "Elimina todos los productos que se encuentren dentro del carrito que posee la sesión activa."
 					},
 					"response": []
 				},
@@ -509,7 +509,7 @@
 								}
 							]
 						},
-						"description": "Elimina todos los productos que se encuenten dentro del carrito que posee la sesión activa."
+						"description": "Elimina el producto con el ID especificado del carrito correspondiente a la sesión activa."
 					},
 					"response": []
 				},
@@ -519,24 +519,14 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "{{URL_LOCAL}}/carts/:productId/:units",
+							"raw": "{{URL_LOCAL}}/carts/3/4",
 							"host": [
 								"{{URL_LOCAL}}"
 							],
 							"path": [
 								"carts",
-								":productId",
-								":units"
-							],
-							"variable": [
-								{
-									"key": "productId",
-									"value": null
-								},
-								{
-									"key": "units",
-									"value": null
-								}
+								"3",
+								"4"
 							]
 						},
 						"description": "Añade el producto que se corresponde al ID de producto especificado con las unidades especificadas al carrito perteneciente a la sesión activa."
